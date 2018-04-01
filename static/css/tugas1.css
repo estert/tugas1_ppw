@@ -1,0 +1,43 @@
+body{
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    color: white;
+    font-family: 'Dancing Script';
+}
+
+.navbar {
+    background-color: #222;
+    box-shadow: 0 0 5px rgba(0,0,0,.8);
+    margin-bottom: 100px;
+}
+
+a{
+  color: white;
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+.flex-item{
+    padding: 0 15px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    border: 1px groove silver;
+  }
+
+#user-photo{
+     border-radius:50%;
+}

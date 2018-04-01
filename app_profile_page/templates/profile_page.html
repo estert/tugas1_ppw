@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style type="text/css">
+	.expertise{
+	  margin-bottom: 20px; 
+	}
+
+	.turun-1{
+	  margin-top: 10px;
+	}
+
+	.turun-2{
+	  margin-top: 10px;
+	}
+
+	@media only screen and (max-width: 768px){
+	  .expertise{
+	    transform: translateY(10px);
+	  }
+	}
+
+	@media only screen and (max-width: 594px){
+	  .turun-1{
+	    transform: translateY(20px);
+	  }
+
+	  .turun-2{
+	    transform: translateY(20px);
+	  }
+	}
+
+	@media only screen and (max-width: 460px){
+	  .expertise{
+	    display: grid;
+	    width: 100px;
+	}
+}
+
+@media only screen and (max-width: 375px){
+	.turun-1{
+    transform: translateY(40px);
+	}
+
+	.turun-2{
+    transform: translateY(40px);
+  	}
+ }
+</style>
+<div class="container">
+	<h3 padding: "10px">Profile</h3>                
+	<div style="text-align:center;">
+		<img src= "https://orig00.deviantart.net/08ce/f/2008/235/9/2/hepzibah_smith_by_jlestrange.jpg" width="200" height="200" style="border-radius: 50%"/>
+	</div>
+	<div style="text-align:center;">
+		<h1 style="font-size: 250%"><b>{{name}}</b></h1>
+	</div>
+	<div class="flex" style="flex-direction:row;display: flex; width:100%; margin-top: 30px; align-self: center;">
+		<div class = "col-xs-3">
+		</div>
+		<div class="flex-item" style="font-weight: bolder;">
+			<p>Birthday</p>
+			<p>Gender</p>
+			<p>Description</p>
+			<p class="turun-1">Email</p>
+			<p class="turun-2">Expertise</p>
+		</div>
+		<div class="flex-item" style="margin-left:20px; width:70%">
+			<p>: {{birth}}</p>
+			<p>: {{gender}}</p>
+			<p>: {{description}}</p>
+			<p>: {{email}}</p>
+			<div class="expertise">
+				{% for ii in expertise %}
+					<div class="col-md-2" style= "display: inline; padding: 5px; background: #0e76a8; border-radius: 8px; margin-right: 5px;margin-bottom: 10px; color: #ffffff; text-align: center;" ><b> {{ii}} </b></div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% load staticfiles %}
+{% load static %}
+<!DOCTYPE html>
+<!-- Block Base -->
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Tugas-1-PPW">
+    <meta name="author" content="{{author}}">
+    <!-- bootstrap csss -->
+    <link rel="shortcut icon" href="https://img00.deviantart.net/29ca/i/2012/342/2/5/panda_vector__by_m_awesome-d5nggwg.png">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/tugas1.css' %}" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'> 
+    <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Maven Pro' rel='stylesheet'>
+	<title>Panda Rangers Social Media</title>
+</head>
+
+<body>
+	<header>
+        {% include "partials/header.html" %}
+    </header>
+    <content>
+            {% block content %}
+                <!-- content goes here -->
+            {% endblock %}
+    </content>
+    <footer>
+        <!-- TODO Block Footer dan include footer.html -->
+        {% block footer %}
+        {% include "partials/footer.html" %}
+        {% endblock %}
+    </footer>
+
+    <!-- Jquery n Bootstrap Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="application/javascript">
+        $(function() {
+          $('a[href*="#"]:not([href="#"])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+              if (target.length) {
+                $('html, body').animate({
+                  scrollTop: target.offset().top - 55
+                }, 1000);
+                return false;
+              }
+            }
+          });
+        });
+    </script>
+</body>
+</html>

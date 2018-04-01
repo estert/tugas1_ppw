@@ -1,0 +1,158 @@
+ *{
+    font-family: 'Maven Pro';
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    position: relative;
+    padding-bottom: 6rem; 
+    min-height: 100%; 
+    margin: 0; 
+    padding-top: 50px; 
+    padding-bottom: 70px; 
+    background: url(https://i.imgur.com/Gj1yf0L.jpg) center center fixed;
+    background-size: 100%;
+    opacity: 20;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    color: white;
+    text-align: left;
+    font-family: 'Dancing Script';
+}
+
+.navbar-brand:hover {
+    color: #7BC5DA;
+}
+
+.navbar {
+    background-color: #04637E;
+    box-shadow: 0 0 5px rgba(0,0,0,.8);
+}
+
+.collapse a{
+  color: white;
+  font-size: 16px;
+}
+
+.collapse a:hover{
+    color: black;
+}
+
+.navbar-toggle{
+  background-color: white;
+}
+
+.icon-bar{
+  background-color: black;
+}
+
+/*Block Statistis*/
+.user-photo{
+     border-radius:50%;
+}
+
+.user-name{
+    font-size: 30px;
+    margin-left: 30px;
+    transform: translateY(20px);
+}
+
+.user-id{
+    margin-bottom: 50px;
+}
+
+.flex-id{
+    margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.flex-stats{
+    margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+
+.user-friend{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.user-feeds{
+    margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+@media only screen and (max-width: 480px) {
+  .flex-user{
+    flex-direction: column;
+  }
+
+  .flex-stats{
+    margin-left: 15vw;
+  }
+
+  .user-photo{
+    margin-left: 30vw;
+  }
+
+  .user-name{
+    margin-left: 5vw;
+  }
+
+  .user-friend{
+    margin-left: 15px;
+  }
+
+  .user-feeds{
+    margin-left: 35px;
+  }
+
+  .number-of-friend{
+    text-align: right;
+  }
+
+  .number-of-feed{
+    text-align: right;
+  }  
+}
+
+
+
+.footer{
+    font-family: 'Maven Pro';
+    text-align: center;
+    background-color: #222;
+    box-shadow: 0 -4px 0 #04637E;
+    color: white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    position: absolute;
+    width: 100%;
+}

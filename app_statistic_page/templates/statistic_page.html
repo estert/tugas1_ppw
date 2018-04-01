@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+	<h3>Statistic</h3>
+	<br>
+	<section class="user-id">
+		<div class="container">
+			<div class="flex-id">
+				<div>
+					<img class="user-photo" src="https://orig00.deviantart.net/08ce/f/2008/235/9/2/hepzibah_smith_by_jlestrange.jpg" alt="gambar" width="100px" height="100px">
+				</div>
+				<div>
+					<p class="user-name"><b>Hepzibah Smith</b></p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="user-statistic">
+		<div class="container">
+			<div class="flex-stats">
+                <div class="user-friend">
+                    <div class="friend-icon">
+                        <img src="https://i.imgur.com/B05ARxs.png" width="50px" height="50px" title="Friend">
+                    </div>
+                    <div class="number-of-friend" style="margin-left: 10px; transform: translateY(20px);">
+                        {{number_of_friend}} People
+                    </div>
+                </div>
+                <div class="user-feeds">
+                	<div class="feed-icon">
+                        <img src="https://i.imgur.com/6kUH4ZX.png" width="30px" height="30px" title="Feeds" style="transform: translateY(13px);">
+                    </div>
+                    <div class="number-of-feed" style="margin-left: 20px; transform: translateY(20px);">
+                        {{number_of_feed}} Posts
+                    </div>
+                </div>
+			</div>
+		</div>
+	</section>
+	<section class="user-latest-post">
+		<div id="container">
+			<div style="margin-left: 55px; margin-top: 30px;">
+				<p style="font-size: 20px;"><b>Latest Post:</b></p>
+				<div class="flex-status" style="margin-left: 0px; margin-bottom: 10px; margin-top: 20px;">
+                    <div class="friend-icon">
+                        <img src="https://orig00.deviantart.net/08ce/f/2008/235/9/2/hepzibah_smith_by_jlestrange.jpg" width="50px" height="50px" title="Profile" style="border-radius:50%">
+                    </div>
+                    <div class="number-of-friend" style="margin-left: 10px; transform: translateY(20px);">
+                        <b>Hepzibah Smith</b>
+                    </div>
+                </div>
+				
+				<div class="latest-post" style="left: -30px; top: 15px;">
+		    		<p style="word-wrap:break-word; width: 90%;">{{ statusAkhir.status | linebreaksbr }}</p> 
+		    		<p style="font-size:80%; font-style:italic;margin-bottom:5px; color: black;">{{statusAkhir.created_date | date:"d M Y H:i:s"}}</p>
+				</div>
+			</div>
+		</div> 
+	</section>
+</div>
+
+{% endblock %}

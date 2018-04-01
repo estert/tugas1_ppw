@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load static %}
+{% block content %}
+
+<div class = "container">
+	<h3>
+		List Friend
+	</h3>
+	
+	<div class="table-responsive">
+		<table class="table text-center table-hover">
+		<thead>
+			<th style = "text-align:center">Name</th>
+			<th style = "text-align:center">Heroku Link</th>
+			<th style = "text-align:center">Addition Date</th>
+		</thead>
+		<tbody>
+			{% for i in data %}
+			<tr class="info">
+				<td> {{i.name}} </td>
+				<td><a href= "{{i.url}}" style="color: black;">{{i.url}}</a> </td>
+				<td> Added {{i.created_date | date:"d M Y H:i:s"}} </td>
+			</tr>             
+			{% endfor %}
+		</tbody>
+		</table>
+	</div>
+</div>
+{% endblock %}

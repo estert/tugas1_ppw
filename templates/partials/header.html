@@ -1,0 +1,21 @@
+<nav id="header" class="navbar navbar-fixed-top">
+    <div id="header-container" class="container">
+        <div class="navbar-header">
+            <a id="brand" class="navbar-brand" href="/home-status">Panda Rangers</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse justify-content-end">
+        <ul class="nav navbar-nav navbar-right" id="nav">
+          <li><a href="{% url 'home-status:index' %}">Status</a></li>
+          <li><a href="{% url 'profile-page:index' %}">Profile</a> </li>
+          <li><a href="{% url 'add-friend:index' %}">Friends</a></li>
+          <li><a href="{% url 'my-stats:index' %}">Stats</a> </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!-- /.container -->
+</nav><!-- /.navbar -->

@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    #flex-luar{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      align-content: flex-start;
+    }
+  #flex-item-luar{
+      padding: 0 15px;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 100%;
+      background-color: rgba(164, 164, 164, 0.3);
+      border-radius: 10px;
+      margin-bottom:25px;
+      width: 100%;
+    }
+    #flex-dalam{
+        display: flex;
+        flex-direction: row;
+    }
+    #container-status{
+        width:69%
+    }
+
+    @media only screen and (max-width: 768px){
+        .flex-item-status{
+            width: 85%;
+        }
+        #container-status{
+            width:90%;
+        }
+    }
+
+    @media only screen and (max-width: 425px){
+        .adding-comment-link{
+            transform: translateX(-5vw);
+        }
+    }
+  </style>
+
+<!-- bikin konten buat tiap fitur di sini yak-->
+<div class = "container" id="container-status">
+    <section name="update_status" id="update_status">
+        <form id="form" method="POST" action="{% url 'home-status:add_status' %}">
+            <h3>Update Status</h3>
+            {% csrf_token %}
+            {{ status_form }}
+            <br>
+            <input id="submit" type="submit" class="btn btn-default btn-primary" value="Post" style="float: right;">
+            <br>
+        </form>
+        <br>
+    </section>
+    <section name ="status_history" id = "status_history">
+        <br>       
+        <div class="flex" id = "flex-luar">
+            {% for i in status %}
+            <div class="flex-item" id="flex-item-luar">
+                <div class="flex" id = 'flex-dalam'>
+                    <div class="flex-item">
+                        <div id="foto" style="font-weight: bold; margin-top:10px;">
+                            <img src="https://orig00.deviantart.net/08ce/f/2008/235/9/2/hepzibah_smith_by_jlestrange.jpg" alt="gambar" width = "55px" height = "55px" style="border-radius:50%">
+                        </div>
+                    </div>
+                    <div class="flex-item" style="padding-left:15px;margin-top:10px;width:87%">
+                        <b> {{ nama }}</b>
+                        <p class = "flex-item-status" style="font-size: 15px;word-wrap:break-word;">
+                                {{ i.status | linebreaksbr }}
+                        </p>
+                        <div id="created_date" style="font-size:80%; font-style:italic;margin-bottom:5px; color: white"> {{ i.created_date | date:"d M Y H:i:s" }}</div>
+                        <div class="adding-comment-link" align="right">
+                            <a href="{% url 'home-status:comment' i.id %}" style="color: white;font-size:85%;">
+                                Add Comment
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% for j in comments %}
+                    {% if j.post.id == i.id %}
+                    <div class='flex' style="width:100%; display:flex;">
+                        <div class="flex-item" style="width: 10%;">
+                        </div>
+                        <div class='flex-item' style='margin-top:10px'>
+                            <img src="{{picture}}" alt="gambar" align="center" width = "55px" height = "55px" style="border-radius:50%">
+                        </div>
+                        <div class='flex-item' style="width: 87%;padding-left:15px;margin-top:10px">
+                                <b> {{ j.nama }}</b>
+                                <p class = "flex-item-status" style="font-size: 15px;word-wrap:break-word;">
+                                        {{ j.comment | linebreaksbr }}
+                                </p>
+                                <div id="created_date" style="font-size:80%; font-style:italic;margin-bottom:5px; color: white"> 
+                                    {{ j.comments_created_date | date:"d M Y H:i:s" }}
+                                </div>
+                        </div>
+                    </div>
+                    <br>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

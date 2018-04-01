@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class = "container">
+    <section name="update_status" id="update_status">
+        <form id="form" method="POST" action="{% url 'home-status:add_comment' status.id %}">
+            <h3>Update Status</h3>
+            {% csrf_token %}
+            {{ comment_form }}
+            <br>
+            <input class="btn btn-default btn-primary" type="submit" value="Post" style="float: right;">
+            <br>
+        </form>
+        <br>
+    </section>
+</div>
+{% endblock %}
